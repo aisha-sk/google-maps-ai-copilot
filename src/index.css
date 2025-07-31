@@ -1,3 +1,14 @@
+/* Import Neue Montreal font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Fallback - using Inter as it's similar to Neue Montreal */
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  font-weight: 300 900;
+  font-style: normal;
+}
+
 /* CSS Variables */
 :root {
   --bg: #0F0F0F;
@@ -6,6 +17,8 @@
   --ai-bubble: #252525;
   --accent: #4285F4;
   --input-bg: #222;
+  --code-bg: #1a1a1a;
+  --copy-btn: #333;
 }
 
 /* Reset and base styles */
@@ -23,12 +36,13 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+  font-family: 'Inter', 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 .app {
@@ -48,8 +62,7 @@ body {
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -57,24 +70,27 @@ body {
   padding: 0 2rem;
 }
 
-.nav-logo {
-  color: white;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0;
 }
+
+.nav-logo {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
 
 .nav-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .nav-link:hover {
@@ -90,6 +106,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .sign-in-btn:hover {
@@ -129,19 +146,59 @@ body {
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+  text-align: center;
+}
+
+.hero-title-main {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 0.9;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title-sub {
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   opacity: 0.95;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+.hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+  text-align: center;
+  justify-content: center;
 }
 
 .cta-button {
@@ -150,7 +207,7 @@ body {
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -159,6 +216,7 @@ body {
   letter-spacing: 0.5px;
   text-decoration: none;
   display: inline-block;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .cta-button:hover {
@@ -186,16 +244,18 @@ body {
 
 .features-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 1rem;
   color: white;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .features-subtitle {
   font-size: 1.25rem;
   color: #ccc;
   margin-bottom: 3rem;
-  font-weight: 300;
+  font-weight: 400;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .features-grid {
@@ -227,15 +287,17 @@ body {
 
 .feature-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.75rem;
   color: white;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .feature-description {
   color: #ccc;
   line-height: 1.5;
   font-size: 0.95rem;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 /* Workspace Section */
@@ -270,9 +332,10 @@ body {
   color: var(--text);
   padding: 1rem 1.5rem;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   border-bottom: 1px solid #333;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .panel-content {
@@ -334,8 +397,13 @@ body {
   gap: 0.5rem;
 }
 
-.chat-input input {
+.input-container {
+  position: relative;
   flex: 1;
+}
+
+.chat-input input {
+  width: 100%;
   border: none;
   padding: 0.75rem;
   border-radius: 8px;
@@ -363,6 +431,7 @@ body {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.2s ease;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
 }
 
 .chat-input button:hover {
@@ -372,6 +441,119 @@ body {
 
 .chat-input button:active {
   transform: translateY(0);
+}
+
+/* Auto-complete suggestions */
+.suggestions-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.suggestion-item {
+  padding: 0.75rem;
+  color: #ccc;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+.suggestion-item:hover {
+  background: #3a3a3a;
+  color: white;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+/* Follow-up suggestions */
+.follow-ups-container {
+  position: relative;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.95);
+  border: 1px solid #333;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  animation: slideInUp 0.3s ease-out;
+}
+
+.follow-ups-title {
+  color: #ccc;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+.follow-ups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.follow-up-btn {
+  background: #2a2a2a;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+  line-height: 1.3;
+}
+
+.follow-up-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.dismiss-follow-ups {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.dismiss-follow-ups:hover {
+  color: #ccc;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Map Panel */
@@ -429,24 +611,39 @@ body {
   }
   
   .nav-links {
-    gap: 1rem;
+    gap: 0;
   }
   
   .nav-link {
     font-size: 0.875rem;
   }
   
-  .hero-title {
-    font-size: 2rem;
+  .hero-title-main {
+    font-size: 2.5rem;
+  }
+  
+  .hero-title-sub {
+    font-size: 1.125rem;
   }
   
   .hero-subtitle {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .hero-content {
     padding: 0 1rem;
+  }
+  
+  .hero-features {
+    max-width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-feature {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
   }
   
   .cta-button {
@@ -498,7 +695,7 @@ body {
 
 @media (max-width: 480px) {
   .nav-container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
   
   .nav-logo {
@@ -514,8 +711,12 @@ body {
     font-size: 0.875rem;
   }
   
-  .hero-title {
-    font-size: 1.75rem;
+  .hero-title-main {
+    font-size: 2rem;
+  }
+  
+  .hero-title-sub {
+    font-size: 1rem;
   }
   
   .workspace {
@@ -596,4 +797,641 @@ body {
 
 .chat-container::-webkit-scrollbar-thumb:hover {
   background: #444;
+}
+
+/* New interactive elements */
+.code-block {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--copy-btn);
+  border: none;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  z-index: 1;
+  transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: #555;
+}
+
+.code-block pre {
+  background: var(--code-bg) !important;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0;
+  overflow-x: auto;
+}
+
+.chat.ai.loading {
+  opacity: 0.7;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.map-container {
+  height: 100%;
+  position: relative;
+}
+
+.map-container .map-placeholder-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hide placeholder when map is loaded */
+.map-container:has(.gm-style) .map-placeholder-content {
+  display: none;
+}
+
+/* New Feature Styles */
+
+/* Feature Controls */
+.feature-controls {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.control-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+.feature-btn:hover:not(:disabled) {
+  background: #3367d6;
+  transform: translateY(-1px);
+}
+
+.feature-btn:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Performance Overlay */
+.performance-overlay {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Monaco', monospace;
+  font-size: 0.75rem;
+}
+
+.fps-counter {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* Sliders Panel */
+.sliders-panel {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 1000;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 250px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.sliders-content h4 {
+  margin: 0 0 1rem 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.sliders-content .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.sliders-content .close-btn:hover {
+  color: #fff;
+}
+
+.slider-group {
+  margin-bottom: 1rem;
+}
+
+.slider-group label {
+  display: block;
+  color: #ccc;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.slider-group input[type="range"] {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #444;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.slider-group input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: none;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #333;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #333;
+  background: #2a2a2a;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.125rem;
+}
+
+.modal-header .close-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.modal-header .close-btn:hover {
+  color: #fff;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Style Editor Modal */
+.style-editor-modal {
+  width: 600px;
+}
+
+.style-textarea {
+  width: 100%;
+  min-height: 300px;
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  resize: vertical;
+  outline: none;
+}
+
+.style-textarea:focus {
+  border-color: var(--accent);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.apply-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.apply-btn:hover {
+  background: #3367d6;
+}
+
+.clear-btn {
+  background: #666;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.clear-btn:hover {
+  background: #777;
+}
+
+/* Diff Modal */
+.diff-modal {
+  width: 1200px;
+  height: 800px;
+}
+
+.diff-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: 400px;
+  margin-bottom: 1rem;
+}
+
+.diff-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.diff-side h4 {
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+.diff-code {
+  flex: 1;
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  overflow: auto;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.diff-summary {
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+.diff-summary h4 {
+  margin: 0 0 1rem 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.diff-stats {
+  color: #ccc;
+  font-size: 0.875rem;
+}
+
+.diff-line {
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0;
+  border-radius: 4px;
+  font-family: 'Monaco', monospace;
+  font-size: 0.75rem;
+}
+
+.diff-line.diff-added {
+  background: rgba(46, 160, 67, 0.2);
+  border-left: 3px solid #2ea043;
+  color: #7dd3fc;
+}
+
+.diff-line.diff-removed {
+  background: rgba(248, 81, 73, 0.2);
+  border-left: 3px solid #f85149;
+  color: #fca5a5;
+}
+
+.diff-line.diff-modified {
+  background: rgba(187, 128, 9, 0.2);
+  border-left: 3px solid #bb8009;
+  color: #fbbf24;
+}
+
+/* Responsive adjustments for new features */
+@media (max-width: 768px) {
+  .control-group {
+    flex-direction: column;
+  }
+  
+  .feature-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .sliders-panel {
+    left: 10px;
+    right: 10px;
+    top: 100px;
+  }
+  
+  .modal-overlay {
+    padding: 1rem;
+  }
+  
+  .diff-modal {
+    width: 100%;
+    height: 90vh;
+  }
+  
+  .diff-container {
+    grid-template-columns: 1fr;
+    height: 300px;
+  }
+  
+  .style-editor-modal {
+    width: 100%;
+  }
+  
+  .docs-modal {
+    width: 100%;
+    max-height: 90vh;
+  }
+  
+  .performance-overlay {
+    top: 60px;
+    right: 10px;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .follow-ups-container {
+    margin: 0.75rem 0;
+    padding: 0.75rem;
+  }
+  
+  .follow-ups-grid {
+    grid-template-columns: 1fr;
+    gap: 0.375rem;
+  }
+  
+  .follow-up-btn {
+    padding: 0.625rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  border-top: 1px solid #333;
+  padding: 3rem 0 1.5rem 0;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  width: 100%;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.footer-section {
+  color: var(--text);
+}
+
+.footer-contact {
+  text-align: right;
+}
+
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+.footer-text {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-contact .footer-links {
+  align-items: flex-end;
+}
+
+.footer-link {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #888;
+  font-size: 0.875rem;
+  margin: 0;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+/* Documentation Modal */
+.docs-modal {
+  width: 900px;
+  max-height: 80vh;
+}
+
+.loading-docs {
+  text-align: center;
+  padding: 2rem;
+  color: #ccc;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+}
+
+.docs-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.docs-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.copy-docs-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Inter', 'Neue Montreal', sans-serif;
+  transition: background 0.2s ease;
+}
+
+.copy-docs-btn:hover {
+  background: #3367d6;
+}
+
+.docs-text {
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow: auto;
+  flex: 1;
+  margin: 0;
+  white-space: pre-wrap;
+  max-height: 500px;
+}
+
+/* Footer responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1rem 0;
+  }
+  
+  .footer-container {
+    padding: 0 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
 }

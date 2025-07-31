@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.vercel
+
+# Claude Code settings
+.claude/
+
+# Bolt.new and deployment folders
+.bolt/
